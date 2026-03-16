@@ -65,9 +65,36 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .nav-cta { background: var(--accent); color: #fff; padding: 0.55rem 1.25rem; border-radius: 6px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .nav-phone { font-size: 0.82rem; font-weight: 600; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s; }
+    .nav-phone:hover { color: var(--text); }
+    .nav-phone svg { width: 13px; height: 13px; }
+    .nav-cta { background: var(--accent); color: #fff; padding: 0.55rem 1.25rem; border-radius: 6px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; border: none; font-family: inherit; }
     .nav-cta:hover { background: var(--accent2); }
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .nav-phone { display: none; } }
+
+    /* ── CONTACT MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2.5rem; max-width: 560px; width: 100%; position: relative;
+      max-height: 90vh; overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: none; border: none; color: var(--muted); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; padding: 0.25rem;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal-close svg { width: 20px; height: 20px; }
+    .modal-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .modal-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
 
     /* ── HERO ── */
     .hero {
@@ -287,11 +314,59 @@
       <li><a href="#about">About</a></li>
       <li><a href="https://www.linkedin.com/in/joshdlange/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.35rem;"><i data-lucide="linkedin" style="width:14px;height:14px;"></i>LinkedIn</a></li>
     </ul>
-    <a href="tel:+13472053138" class="nav-cta">
-      <i data-lucide="phone" style="width:14px;height:14px;"></i>
-      Let's Talk
-    </a>
+    <div class="nav-right">
+      <a href="tel:+15123379530" class="nav-phone">
+        <i data-lucide="phone" style="width:13px;height:13px;"></i>
+        (512) 337-9530
+      </a>
+      <button class="nav-cta" onclick="openModal()">
+        <i data-lucide="mail" style="width:14px;height:14px;"></i>
+        Let's Talk
+      </button>
+    </div>
   </nav>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal" onclick="handleModalClick(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+      <div class="modal-title">Tell me where it hurts.</div>
+      <div class="modal-sub">30 seconds. I'll respond within one business day.</div>
+      <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New inquiry from joshdlange.com" />
+        <input type="hidden" name="from_name" value="joshdlange.com" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-company">Company</label>
+          <input type="text" id="cf-company" name="company" placeholder="Acme Inc." autocomplete="organization" />
+        </div>
+        <div class="form-group">
+          <label for="cf-problem">What's your biggest operational challenge right now?</label>
+          <textarea id="cf-problem" name="message" rows="4" placeholder="e.g. We're spending 20 hours a week on manual follow-ups and our close rate is slipping..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-xl form-submit-btn" id="formSubmitBtn">
+          <span id="formBtnText"><i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It</span>
+        </button>
+        <div id="formSuccess" class="form-success" style="display:none;">
+          <i data-lucide="check-circle" style="width:20px;height:20px;vertical-align:-4px;margin-right:8px;color:#22c55e;"></i>
+          Got it — I'll be in touch within one business day.
+        </div>
+        <div id="formError" class="form-error" style="display:none;">
+          Something went wrong. Email me directly at <a href="mailto:josh@trillage.io">josh@trillage.io</a>.
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -311,10 +386,10 @@
         <span class="hero-pill"><i data-lucide="users"></i> Sales Training</span>
       </div>
       <div class="hero-actions">
-        <a href="tel:+13472053138" class="btn-primary btn-xl">
-          <i data-lucide="phone" style="width:18px;height:18px;"></i>
-          Book a Free Call
-        </a>
+        <button onclick="openModal()" class="btn-primary btn-xl" style="border:none;cursor:pointer;font-family:inherit;">
+          <i data-lucide="mail" style="width:18px;height:18px;"></i>
+          Get In Touch
+        </button>
         <a href="#services" class="btn-ghost btn-xl">
           See What I Do
           <i data-lucide="arrow-down" style="width:16px;height:16px;"></i>
@@ -670,7 +745,7 @@
           <p>Based in Austin, TX. Working with businesses across the country.</p>
           <br />
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="tel:+13472053138" class="btn-primary">
+          <a href="tel:+15123379530" class="btn-primary">
             <i data-lucide="phone" style="width:16px;height:16px;"></i>
             Call Josh
           </a>
@@ -736,47 +811,6 @@
     </div>
   </section>
 
-  <!-- CONTACT FORM -->
-  <section id="contact" class="contact-section">
-    <div class="section-inner">
-      <p class="section-label">Get In Touch</p>
-      <h2>Tell me where it hurts.</h2>
-      <p class="contact-sub">30-second form. I'll respond within one business day.</p>
-      <div class="contact-wrap">
-        <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cf-name">Your Name</label>
-              <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
-            </div>
-            <div class="form-group">
-              <label for="cf-email">Email Address</label>
-              <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required autocomplete="email" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="cf-company">Company</label>
-            <input type="text" id="cf-company" name="company" placeholder="Acme Inc." autocomplete="organization" />
-          </div>
-          <div class="form-group">
-            <label for="cf-problem">What's your biggest operational challenge right now?</label>
-            <textarea id="cf-problem" name="problem" rows="4" placeholder="e.g. We're spending 20 hours a week on manual follow-ups and our close rate is slipping..." required></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-xl form-submit-btn" id="formSubmitBtn">
-            <span id="formBtnText"><i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It</span>
-          </button>
-          <div id="formSuccess" class="form-success" style="display:none;">
-            <i data-lucide="check-circle" style="width:20px;height:20px;vertical-align:-4px;margin-right:8px;color:#22c55e;"></i>
-            Got it — I'll be in touch within one business day.
-          </div>
-          <div id="formError" class="form-error" style="display:none;">
-            Something went wrong. Email me directly at <a href="mailto:josh@trillage.io">josh@trillage.io</a>.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section">
     <div class="section-inner">
@@ -784,13 +818,13 @@
       <h2>Let's find the money<br />you're leaving behind.</h2>
       <p>Free 30-minute call. No pitch, no pressure. Just an honest conversation about where I can move the needle for your business.</p>
       <div class="cta-actions">
-        <a href="tel:+13472053138" class="btn-primary btn-xl">
-          <i data-lucide="phone" style="width:18px;height:18px;"></i>
-          Call Josh   (347) 205-3138
-        </a>
-        <a href="#contact" class="btn-ghost btn-xl">
+        <button onclick="openModal()" class="btn-primary btn-xl" style="border:none;cursor:pointer;font-family:inherit;">
           <i data-lucide="mail" style="width:18px;height:18px;"></i>
           Send a Message
+        </button>
+        <a href="tel:+15123379530" class="btn-ghost btn-xl">
+          <i data-lucide="phone" style="width:18px;height:18px;"></i>
+          Call (512) 337-9530
         </a>
       </div>
     </div>
@@ -798,7 +832,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Josh Lange · Austin, TX · <a href="tel:+13472053138">(347) 205-3138</a> · <a href="mailto:josh@trillage.io">josh@trillage.io</a></p>
+    <p>© 2026 Josh Lange · Austin, TX · <a href="tel:+15123379530">(512) 337-9530</a> · <a href="mailto:josh@trillage.io">josh@trillage.io</a></p>
     <p style="margin-top:0.5rem; font-size:0.72rem; opacity:0.6;">A Jackaroni Entertainment company</p>
   </footer>
 
@@ -814,7 +848,23 @@
       btn.classList.add('active');
     }
 
-    // Contact form handler
+    // Modal open/close
+    function openModal() {
+      document.getElementById('contactModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('contactModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function handleModalClick(e) {
+      if (e.target === document.getElementById('contactModal')) closeModal();
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Contact form handler — Web3Forms
     async function handleFormSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('formSubmitBtn');
@@ -828,12 +878,8 @@
       successEl.style.display = 'none';
       errorEl.style.display = 'none';
 
-      const name = document.getElementById('cf-name').value.trim();
-      const email = document.getElementById('cf-email').value.trim();
-      const company = document.getElementById('cf-company').value.trim();
-      const problem = document.getElementById('cf-problem').value.trim();
-
       // Fire GA4 qualify_lead event
+      const company = document.getElementById('cf-company').value.trim();
       if (typeof gtag !== 'undefined') {
         gtag('event', 'qualify_lead', {
           event_category: 'lead',
@@ -841,27 +887,24 @@
         });
       }
 
-      // Build mailto link and open it as fallback delivery
-      const subject = encodeURIComponent(`New inquiry from ${name}${company ? ' @ ' + company : ''}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\n\nChallenge:\n${problem}`
-      );
-      const mailtoLink = `mailto:josh@trillage.io?subject=${subject}&body=${body}`;
-
       try {
-        // Open mailto — this is zero-cost, zero-dependency, works everywhere
-        window.location.href = mailtoLink;
+        const formData = new FormData(form);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
 
-        // Show success after short delay
-        setTimeout(() => {
+        if (data.success) {
           successEl.style.display = 'block';
           form.reset();
-          btn.disabled = false;
-          btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It';
           lucide.createIcons();
-        }, 800);
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
       } catch (err) {
         errorEl.style.display = 'block';
+      } finally {
         btn.disabled = false;
         btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It';
         lucide.createIcons();
@@ -878,7 +921,7 @@
     "jobTitle": "AI Consultant & Sales Leadership Advisor",
     "url": "https://joshdlange.com",
     "email": "josh@trillage.io",
-    "telephone": "+13472053138",
+    "telephone": "+15123379530",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Austin",
