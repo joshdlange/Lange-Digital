@@ -354,9 +354,15 @@
           <label for="cf-problem">What's your biggest operational challenge right now?</label>
           <textarea id="cf-problem" name="message" rows="4" placeholder="e.g. We're spending 20 hours a week on manual follow-ups and our close rate is slipping..." required></textarea>
         </div>
-        <button type="submit" class="btn-primary btn-xl form-submit-btn" id="formSubmitBtn">
-          <span id="formBtnText"><i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It</span>
-        </button>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+          <button type="submit" class="btn-primary form-submit-btn" id="formSubmitBtn" style="padding:0.85rem 1.75rem;font-size:0.975rem;">
+            <span id="formBtnText"><i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It</span>
+          </button>
+          <a href="sms:+15123379530" class="btn-ghost" style="padding:0.85rem 1.75rem;font-size:0.975rem;display:inline-flex;align-items:center;gap:0.45rem;">
+            <i data-lucide="message-square" style="width:16px;height:16px;"></i>
+            Text Me Instead
+          </a>
+        </div>
         <div id="formSuccess" class="form-success" style="display:none;">
           <i data-lucide="check-circle" style="width:20px;height:20px;vertical-align:-4px;margin-right:8px;color:#22c55e;"></i>
           Got it — I'll be in touch within one business day.
@@ -824,7 +830,11 @@
         </button>
         <a href="tel:+15123379530" class="btn-ghost btn-xl">
           <i data-lucide="phone" style="width:18px;height:18px;"></i>
-          Call (512) 337-9530
+          Call
+        </a>
+        <a href="sms:+15123379530" class="btn-ghost btn-xl">
+          <i data-lucide="message-square" style="width:18px;height:18px;"></i>
+          Text
         </a>
       </div>
     </div>
