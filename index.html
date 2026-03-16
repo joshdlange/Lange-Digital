@@ -13,7 +13,15 @@
     gtag('js', new Date());
     gtag('config', 'G-FR5KVHY4S3');
   </script>
-  <title>Josh Lange   AI Consulting and Sales Leadership</title>
+  <title>Josh Lange — AI Consulting & Sales Leadership | Austin, TX</title>
+  <meta name="description" content="Josh Lange helps SMBs find hidden revenue through AI automation, fractional CRO leadership, and custom development. Based in Austin, TX." />
+  <meta property="og:title" content="Josh Lange — AI Consulting & Sales Leadership" />
+  <meta property="og:description" content="Find the money you're leaving on the table. AI automation, fractional CRO, and custom dev for growing businesses." />
+  <meta property="og:url" content="https://joshdlange.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Josh Lange — AI Consulting & Sales Leadership" />
+  <meta name="twitter:description" content="Find the money you're leaving on the table. AI automation, fractional CRO, and custom dev for growing businesses." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -227,6 +235,33 @@
     .venture-name { font-weight: 700; font-size: 0.9rem; }
     .venture-desc { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
     .venture-badge { font-size: 0.68rem; font-weight: 700; padding: 0.22rem 0.6rem; border-radius: 100px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); color: var(--green); white-space: nowrap; }
+
+    /* ── CONTACT FORM ── */
+    .contact-section { background: var(--surface); padding: 6rem 1.5rem; }
+    .contact-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; }
+    .contact-wrap { max-width: 640px; margin: 0 auto; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+    .form-group input,
+    .form-group textarea {
+      background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.75rem 1rem; color: var(--text); font-size: 0.95rem; font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s; resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,92,43,0.12);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .form-submit-btn { align-self: flex-start; cursor: pointer; border: none; font-family: inherit; }
+    .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success { color: var(--text); font-size: 0.95rem; padding: 0.75rem 0; }
+    .form-error { color: #f87171; font-size: 0.95rem; padding: 0.75rem 0; }
+    .form-error a { color: #f87171; }
 
     /* ── CTA ── */
     .cta-section { background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(255,92,43,0.14) 0%, transparent 70%); text-align: center; padding: 6rem 1.5rem; }
@@ -701,6 +736,47 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
+  <section id="contact" class="contact-section">
+    <div class="section-inner">
+      <p class="section-label">Get In Touch</p>
+      <h2>Tell me where it hurts.</h2>
+      <p class="contact-sub">30-second form. I'll respond within one business day.</p>
+      <div class="contact-wrap">
+        <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-company">Company</label>
+            <input type="text" id="cf-company" name="company" placeholder="Acme Inc." autocomplete="organization" />
+          </div>
+          <div class="form-group">
+            <label for="cf-problem">What's your biggest operational challenge right now?</label>
+            <textarea id="cf-problem" name="problem" rows="4" placeholder="e.g. We're spending 20 hours a week on manual follow-ups and our close rate is slipping..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-xl form-submit-btn" id="formSubmitBtn">
+            <span id="formBtnText"><i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It</span>
+          </button>
+          <div id="formSuccess" class="form-success" style="display:none;">
+            <i data-lucide="check-circle" style="width:20px;height:20px;vertical-align:-4px;margin-right:8px;color:#22c55e;"></i>
+            Got it — I'll be in touch within one business day.
+          </div>
+          <div id="formError" class="form-error" style="display:none;">
+            Something went wrong. Email me directly at <a href="mailto:josh@trillage.io">josh@trillage.io</a>.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <div class="section-inner">
@@ -712,9 +788,9 @@
           <i data-lucide="phone" style="width:18px;height:18px;"></i>
           Call Josh   (347) 205-3138
         </a>
-        <a href="mailto:josh@trillage.io" class="btn-ghost btn-xl">
+        <a href="#contact" class="btn-ghost btn-xl">
           <i data-lucide="mail" style="width:18px;height:18px;"></i>
-          Send an Email
+          Send a Message
         </a>
       </div>
     </div>
@@ -737,6 +813,98 @@
       document.getElementById('tab-' + tab).classList.add('active');
       btn.classList.add('active');
     }
+
+    // Contact form handler
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('formSubmitBtn');
+      const btnText = document.getElementById('formBtnText');
+      const successEl = document.getElementById('formSuccess');
+      const errorEl = document.getElementById('formError');
+      const form = document.getElementById('contactForm');
+
+      btn.disabled = true;
+      btnText.innerHTML = 'Sending...';
+      successEl.style.display = 'none';
+      errorEl.style.display = 'none';
+
+      const name = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const company = document.getElementById('cf-company').value.trim();
+      const problem = document.getElementById('cf-problem').value.trim();
+
+      // Fire GA4 qualify_lead event
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'qualify_lead', {
+          event_category: 'lead',
+          event_label: company || 'unknown',
+        });
+      }
+
+      // Build mailto link and open it as fallback delivery
+      const subject = encodeURIComponent(`New inquiry from ${name}${company ? ' @ ' + company : ''}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\n\nChallenge:\n${problem}`
+      );
+      const mailtoLink = `mailto:josh@trillage.io?subject=${subject}&body=${body}`;
+
+      try {
+        // Open mailto — this is zero-cost, zero-dependency, works everywhere
+        window.location.href = mailtoLink;
+
+        // Show success after short delay
+        setTimeout(() => {
+          successEl.style.display = 'block';
+          form.reset();
+          btn.disabled = false;
+          btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It';
+          lucide.createIcons();
+        }, 800);
+      } catch (err) {
+        errorEl.style.display = 'block';
+        btn.disabled = false;
+        btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It';
+        lucide.createIcons();
+      }
+    }
+  </script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Josh Lange",
+    "jobTitle": "AI Consultant & Sales Leadership Advisor",
+    "url": "https://joshdlange.com",
+    "email": "josh@trillage.io",
+    "telephone": "+13472053138",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "sameAs": ["https://www.linkedin.com/in/joshdlange/"],
+    "knowsAbout": ["AI Automation", "Sales Leadership", "Revenue Growth", "Custom Software Development", "Business Consulting"],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "AI Opportunity Audit",
+        "description": "A deep-dive into your operations to find exactly where AI makes the biggest impact."
+      },
+      {
+        "@type": "Offer",
+        "name": "Fractional CRO",
+        "description": "Executive-level revenue leadership without the full-time cost."
+      },
+      {
+        "@type": "Offer",
+        "name": "Automation Builds",
+        "description": "Turn your most time-consuming workflows into automated systems."
+      }
+    ]
+  }
   </script>
 </body>
 </html>
