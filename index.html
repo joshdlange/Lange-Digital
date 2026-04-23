@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5KVHY4S3"></script>
   <script>
@@ -13,308 +13,100 @@
     gtag('js', new Date());
     gtag('config', 'G-FR5KVHY4S3');
   </script>
-  <title>Josh Lange — AI & Automation for Contractors & Trades | Austin, TX</title>
-  <meta name="description" content="Josh Lange helps contractors and trades businesses in Austin stop losing jobs to slow follow-up. AI automation, custom builds, and revenue systems — live demos, real results." />
+  <title>Josh Lange — AI Consulting & Sales Leadership | Austin, TX</title>
+  <meta name="description" content="Josh Lange is an AI consultant and sales leadership advisor based in Austin, TX. Find the money you're leaving on the table — AI automation, fractional CRO, custom development." />
   <meta property="og:title" content="Josh Lange — AI Consulting & Sales Leadership" />
   <meta property="og:description" content="Find the money you're leaving on the table. AI automation, fractional CRO, and custom dev for growing businesses." />
   <meta property="og:url" content="https://joshdlange.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Josh Lange — AI Consulting & Sales Leadership" />
-  <meta name="twitter:description" content="Find the money you're leaving on the table. AI automation, fractional CRO, and custom dev for growing businesses." />
   <link rel="canonical" href="https://joshdlange.com/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #080809;
-      --surface: #0f0f11;
-      --surface2: #17171a;
-      --border: rgba(255,255,255,0.07);
-      --text: #f0f0f2;
-      --muted: #7a7a85;
-      --accent: #ff5c2b;
-      --accent2: #ff8c5a;
-      --green: #22c55e;
-      --blue: #3b82f6;
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--black);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 2rem;
-      background: rgba(8,8,9,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-right { display: flex; align-items: center; gap: 1rem; }
-    .nav-phone { font-size: 0.82rem; font-weight: 600; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s; }
-    .nav-phone:hover { color: var(--text); }
-    .nav-phone svg { width: 13px; height: 13px; }
-    .nav-cta { background: var(--accent); color: #fff; padding: 0.55rem 1.25rem; border-radius: 6px; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background 0.2s; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; border: none; font-family: inherit; }
-    .nav-cta:hover { background: var(--accent2); }
-    @media (max-width: 768px) { .nav-links { display: none; } .nav-phone { display: none; } }
-
-    /* ── CONTACT MODAL ── */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0; z-index: 999;
-      background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
-      align-items: center; justify-content: center; padding: 1.5rem;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-      padding: 2.5rem; max-width: 560px; width: 100%; position: relative;
-      max-height: 90vh; overflow-y: auto;
-    }
-    .modal-close {
-      position: absolute; top: 1.25rem; right: 1.25rem;
-      background: none; border: none; color: var(--muted); cursor: pointer;
-      display: flex; align-items: center; justify-content: center; padding: 0.25rem;
-      transition: color 0.2s;
-    }
-    .modal-close:hover { color: var(--text); }
-    .modal-close svg { width: 20px; height: 20px; }
-    .modal-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-    .modal-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
-
-    /* ── HERO ── */
-    .hero {
+    /* ── HOME: PATH CARDS ── */
+    .home-hero {
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       text-align: center; padding: 8rem 1.5rem 5rem;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,92,43,0.13) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,92,43,0.11) 0%, transparent 70%);
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
+    .home-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.018'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    .hero-inner { position: relative; max-width: 880px; margin: 0 auto; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(255,92,43,0.1); border: 1px solid rgba(255,92,43,0.28);
-      color: var(--accent2); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem;
-    }
-    .hero-badge svg { width: 12px; height: 12px; }
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight: 900;
-      line-height: 1.07; letter-spacing: -0.03em; margin-bottom: 1.5rem;
-    }
-    h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero-sub { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--muted); max-width: 600px; margin: 0 auto 2rem; line-height: 1.75; }
-    .hero-pills { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .hero-pill {
-      display: inline-flex; align-items: center; gap: 0.4rem;
+    .home-inner { position: relative; max-width: 860px; margin: 0 auto; width: 100%; }
+    .home-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+    .home-h1 { font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .home-h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .home-tagline { font-size: 1.05rem; color: var(--muted); margin-bottom: 3rem; line-height: 1.6; }
+
+    /* Path cards */
+    .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 3rem; }
+    @media (max-width: 640px) { .path-grid { grid-template-columns: 1fr; } }
+    .path-card {
+      display: flex; flex-direction: column; align-items: flex-start; text-align: left;
       background: var(--surface); border: 1px solid var(--border);
-      color: var(--muted); font-size: 0.8rem; font-weight: 500;
-      padding: 0.35rem 0.85rem; border-radius: 100px;
+      border-radius: 16px; padding: 2.25rem 2rem; text-decoration: none; color: var(--text);
+      transition: all 0.22s; cursor: pointer; position: relative; overflow: hidden;
     }
-    .hero-pill svg { width: 13px; height: 13px; color: var(--accent); }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--accent); color: #fff; padding: 0.9rem 2rem;
-      border-radius: 8px; font-size: 1rem; font-weight: 700;
-      text-decoration: none; transition: all 0.2s;
-      display: inline-flex; align-items: center; gap: 0.5rem;
+    .path-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(255,92,43,0.07) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.3s;
     }
-    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,92,43,0.3); }
-    .btn-ghost {
-      background: transparent; color: var(--text); padding: 0.9rem 2rem;
-      border-radius: 8px; font-size: 1rem; font-weight: 600;
-      text-decoration: none; border: 1px solid var(--border);
-      transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-    }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.2); background: var(--surface); }
+    .path-card:hover { border-color: rgba(255,92,43,0.4); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
+    .path-card:hover::after { opacity: 1; }
+    .path-card--sales:hover { border-color: rgba(59,130,246,0.4); }
+    .path-card--sales::after { background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(59,130,246,0.07) 0%, transparent 70%); }
 
-    /* ── STATS BAR ── */
-    .stats-bar { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2.5rem 1.5rem; }
-    .stats-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
-    .stat-num { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.03em; color: var(--accent); display: block; }
-    .stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.4; }
-
-    /* ── SHARED SECTION ── */
-    section { padding: 5.5rem 1.5rem; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.85rem; }
-    h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
-    .section-desc { color: var(--muted); font-size: 1.05rem; max-width: 560px; margin-bottom: 3rem; line-height: 1.75; }
-
-    /* ── SERVICES SWITCHER ── */
-    .services-section { background: var(--surface); }
-    .services-tabs { display: flex; gap: 0.5rem; margin-bottom: 3rem; background: var(--black); border: 1px solid var(--border); border-radius: 10px; padding: 0.35rem; width: fit-content; }
-    .tab-btn {
-      padding: 0.65rem 1.4rem; border-radius: 7px; font-size: 0.875rem; font-weight: 600;
-      cursor: pointer; border: none; background: transparent; color: var(--muted);
-      transition: all 0.2s; display: flex; align-items: center; gap: 0.5rem;
-    }
-    .tab-btn svg { width: 15px; height: 15px; }
-    .tab-btn.active { background: var(--accent); color: #fff; }
-    .tab-btn:hover:not(.active) { color: var(--text); }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
-    .service-card {
-      background: var(--surface2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 2rem; transition: border-color 0.2s, transform 0.2s;
-    }
-    .service-card:hover { border-color: rgba(255,92,43,0.3); transform: translateY(-2px); }
-    .service-icon {
-      width: 44px; height: 44px; border-radius: 10px;
+    .path-icon {
+      width: 52px; height: 52px; border-radius: 12px;
       background: rgba(255,92,43,0.1); border: 1px solid rgba(255,92,43,0.2);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.25rem; color: var(--accent);
+      color: var(--accent); margin-bottom: 1.5rem; flex-shrink: 0; position: relative; z-index: 1;
     }
-    .service-icon svg { width: 20px; height: 20px; }
-    .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .service-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
-    .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag { font-size: 0.72rem; font-weight: 600; padding: 0.22rem 0.6rem; border-radius: 100px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); }
-
-    /* sales tab accent */
-    .sales-tab .service-icon { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.2); color: var(--blue); }
-    .sales-tab .service-card:hover { border-color: rgba(59,130,246,0.3); }
-
-    /* ── PROBLEM ── */
-    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-    @media (max-width: 768px) { .problem-grid { grid-template-columns: 1fr; } }
-    .problem-points { display: flex; flex-direction: column; gap: 1.5rem; }
-    .problem-point { display: flex; gap: 1rem; align-items: flex-start; }
-    .point-icon { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,92,43,0.1); border: 1px solid rgba(255,92,43,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
-    .point-icon svg { width: 18px; height: 18px; }
-    .point-text h4 { font-size: 0.975rem; font-weight: 700; margin-bottom: 0.3rem; }
-    .point-text p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
-    .problem-callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 12px; padding: 2rem; }
-    .callout-quote { font-size: 1.2rem; font-weight: 700; line-height: 1.45; margin-bottom: 1.5rem; }
-    .callout-stat-row { display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
-    .callout-stat-row:last-child { border-bottom: none; }
-    .callout-stat-row strong { color: var(--accent2); font-size: 1.05rem; font-weight: 700; }
-
-    /* ── INDUSTRIES ── */
-    .industries { background: var(--surface); }
-    .industries-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
-    .industry-card { background: var(--black); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: border-color 0.2s; }
-    .industry-card:hover { border-color: rgba(255,92,43,0.3); }
-    .industry-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-    .industry-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,92,43,0.08); border: 1px solid rgba(255,92,43,0.15); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
-    .industry-icon svg { width: 17px; height: 17px; }
-    .industry-card h3 { font-size: 0.95rem; font-weight: 700; }
-    .industry-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .industry-card ul li { font-size: 0.835rem; color: var(--muted); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5; }
-    .industry-li-arrow { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
-    .industry-li-arrow svg { width: 11px; height: 11px; }
-
-    /* ── PROCESS ── */
-    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; }
-    .process-step { position: relative; }
-    .step-num { font-size: 3.5rem; font-weight: 900; color: rgba(255,92,43,0.38); line-height: 1; margin-bottom: 0.75rem; letter-spacing: -0.04em; }
-    .process-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .process-step p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--surface); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .testimonial-card { background: var(--black); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; position: relative; }
-    .quote-mark { position: absolute; top: 1.5rem; right: 1.75rem; color: rgba(255,92,43,0.2); }
-    .quote-mark svg { width: 28px; height: 28px; }
-    .testimonial-text { font-size: 0.95rem; color: var(--text); line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
-    .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; color: #fff; flex-shrink: 0; }
-    .author-name { font-size: 0.9rem; font-weight: 700; }
-    .author-title { font-size: 0.78rem; color: var(--muted); }
-    .stars { color: var(--accent); font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: flex; gap: 0.2rem; }
-    .stars svg { width: 14px; height: 14px; fill: var(--accent); }
-
-    /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
-    .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.975rem; }
-    .about-text p strong { color: var(--text); }
-    .about-ventures { display: flex; flex-direction: column; gap: 1rem; }
-    .venture-label { font-size: 0.72rem; color: var(--muted); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
-    .venture-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.4rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .venture-info { display: flex; align-items: center; gap: 0.75rem; }
-    .venture-icon { width: 40px; height: 40px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #000; display: flex; align-items: center; justify-content: center; } .venture-icon img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
-    .venture-icon svg { width: 15px; height: 15px; }
-    .venture-name { font-weight: 700; font-size: 0.9rem; }
-    .venture-desc { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
-    .venture-badge { font-size: 0.68rem; font-weight: 700; padding: 0.22rem 0.6rem; border-radius: 100px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); color: var(--green); white-space: nowrap; }
-
-    /* ── CONTACT FORM ── */
-    .contact-section { background: var(--surface); padding: 6rem 1.5rem; }
-    .contact-sub { color: var(--muted); font-size: 1rem; margin-bottom: 3rem; }
-    .contact-wrap { max-width: 640px; margin: 0 auto; }
-    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
-    .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
-    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
-    .form-group input,
-    .form-group textarea {
-      background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
-      padding: 0.75rem 1rem; color: var(--text); font-size: 0.95rem; font-family: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s; resize: vertical;
+    .path-icon svg { width: 22px; height: 22px; }
+    .path-icon--blue { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.2); color: var(--blue); }
+    .path-card h3 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.6rem; line-height: 1.2; position: relative; z-index: 1; }
+    .path-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.75rem; position: relative; z-index: 1; flex: 1; }
+    .path-arrow {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.875rem; font-weight: 700; color: var(--accent);
+      position: relative; z-index: 1; transition: gap 0.2s;
     }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,92,43,0.12);
+    .path-card--sales .path-arrow { color: var(--blue); }
+    .path-card:hover .path-arrow { gap: 0.65rem; }
+
+    /* Projects strip */
+    .projects-strip {
+      display: inline-flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 0.7rem 1.5rem;
+      text-decoration: none; color: var(--muted);
+      font-size: 0.8rem; transition: all 0.2s;
     }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--muted); opacity: 0.6; }
-    .form-submit-btn { align-self: flex-start; cursor: pointer; border: none; font-family: inherit; }
-    .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .form-success { color: var(--text); font-size: 0.95rem; padding: 0.75rem 0; }
-    .form-error { color: #f87171; font-size: 0.95rem; padding: 0.75rem 0; }
-    .form-error a { color: #f87171; }
-
-    /* ── CTA ── */
-    .cta-section { background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(255,92,43,0.14) 0%, transparent 70%); text-align: center; padding: 6rem 1.5rem; }
-    .cta-section h2 { margin-bottom: 1rem; }
-    .cta-section p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-xl { padding: 1.05rem 2.4rem; font-size: 1.05rem; border-radius: 10px; }
-
-    /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.82rem; }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--text); }
+    .projects-strip:hover { border-color: rgba(255,255,255,0.15); color: var(--text); }
+    .projects-strip-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .projects-strip-item { font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
+    .projects-strip-sep { color: var(--border); }
+    .projects-strip-cta { display: flex; align-items: center; gap: 0.3rem; font-weight: 700; color: var(--accent2); font-size: 0.8rem; white-space: nowrap; }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">Josh <span>Lange</span></a>
+    <a href="/" class="nav-logo">Josh <span>Lange</span></a>
     <ul class="nav-links">
-      <li><a href="/contractors" style="color:var(--accent2);font-weight:700;">Contractors</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#industries">Industries</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="/ai">AI &amp; Automation</a></li>
+      <li><a href="/sales">Sales Leadership</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="/about">About</a></li>
       <li><a href="https://www.linkedin.com/in/joshdlange/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.35rem;"><i data-lucide="linkedin" style="width:14px;height:14px;"></i>LinkedIn</a></li>
     </ul>
     <div class="nav-right">
@@ -338,7 +130,7 @@
       <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
         <input type="hidden" name="access_key" value="f66de079-06ac-4141-9c70-c27ed360c578" />
         <input type="hidden" name="subject" value="New inquiry from joshdlange.com" />
-        <input type="hidden" name="from_name" value="joshdlange.com" />
+        <input type="hidden" name="from_name" value="joshdlange.com (home)" />
         <div class="form-row">
           <div class="form-group">
             <label for="cf-name">Your Name</label>
@@ -354,8 +146,8 @@
           <input type="text" id="cf-company" name="company" placeholder="Acme Inc." autocomplete="organization" />
         </div>
         <div class="form-group">
-          <label for="cf-problem">What's your biggest operational challenge right now?</label>
-          <textarea id="cf-problem" name="message" rows="4" placeholder="e.g. We're spending 20 hours a week on manual follow-ups and our close rate is slipping..." required></textarea>
+          <label for="cf-problem">What's your biggest challenge right now?</label>
+          <textarea id="cf-problem" name="message" rows="4" placeholder="e.g. We're losing jobs to faster competitors..." required></textarea>
         </div>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
           <button type="submit" class="btn-primary form-submit-btn" id="formSubmitBtn" style="padding:0.85rem 1.75rem;font-size:0.975rem;">
@@ -371,492 +163,51 @@
           Got it — I'll be in touch within one business day.
         </div>
         <div id="formError" class="form-error" style="display:none;">
-          Something went wrong. Email me directly at <a href="mailto:josh@trillage.io">josh@trillage.io</a>.
+          Something went wrong. Email me at <a href="mailto:josh@trillage.io">josh@trillage.io</a>.
         </div>
       </form>
     </div>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge">
-        <i data-lucide="hard-hat"></i>
-        Contractors &amp; Trades · Austin, TX · AI &amp; Automation
-      </div>
-      <h1>Contractors: where are you<br />losing the <em>most money?</em></h1>
-      <p class="hero-sub">
-        Estimates sitting unsent. Leads you didn't follow up on. Invoices taking days to go out. I walk onto your job site, ask one question, and show you something live that fixes it — fast.
-      </p>
-      <div class="hero-pills">
-        <span class="hero-pill"><i data-lucide="file-text"></i> Estimates &amp; Invoicing</span>
-        <span class="hero-pill"><i data-lucide="calendar"></i> Job Scheduling</span>
-        <span class="hero-pill"><i data-lucide="bell"></i> Lead Follow-Up</span>
-        <span class="hero-pill"><i data-lucide="code-2"></i> Custom Builds</span>
-      </div>
-      <div class="hero-actions">
-        <a href="sms:+15123379530" class="btn-primary btn-xl">
-          <i data-lucide="message-square" style="width:18px;height:18px;"></i>
-          Text Me Now
+  <!-- HOME HERO -->
+  <section class="home-hero">
+    <div class="home-inner">
+      <p class="home-eyebrow">Josh Lange · Austin, TX · Builder &amp; Operator</p>
+      <h1 class="home-h1">Which problem are we<br /><em>solving today?</em></h1>
+      <p class="home-tagline">Pick your path. I'll take it from there.</p>
+
+      <div class="path-grid">
+        <a href="/ai" class="path-card">
+          <div class="path-icon">
+            <i data-lucide="cpu"></i>
+          </div>
+          <h3>I need AI &amp; Automation</h3>
+          <p>Automate the work eating your time and find the money you're missing — from estimates to follow-ups to invoicing.</p>
+          <span class="path-arrow">Explore <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
         </a>
-        <button onclick="openModal()" class="btn-ghost btn-xl" style="border:none;cursor:pointer;font-family:inherit;border:1px solid var(--border);">
-          <i data-lucide="calendar" style="width:16px;height:16px;"></i>
-          Book a Call
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div>
-        <span class="stat-num">2–4 jobs</span>
-        <div class="stat-label">average contractor loses monthly to slow follow-up</div>
-      </div>
-      <div>
-        <span class="stat-num">48 hrs</span>
-        <div class="stat-label">average time to respond to a new lead — competitors do it in minutes</div>
-      </div>
-      <div>
-        <span class="stat-num">78%</span>
-        <div class="stat-label">of jobs go to whoever responds first — not cheapest</div>
-      </div>
-      <div>
-        <span class="stat-num">$1,200+</span>
-        <div class="stat-label">average value of a single missed or ghosted estimate</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- THE PROBLEM -->
-  <section>
-    <div class="section-inner">
-      <div class="problem-grid">
-        <div>
-          <p class="section-label">The Problem</p>
-          <h2>The world is building on AI.<br />Most businesses are watching.</h2>
-          <p class="section-desc">Every day you wait, your competitors get faster, leaner, and cheaper to run. The window is still open but it won't be forever.</p>
-          <div class="problem-points">
-            <div class="problem-point">
-              <div class="point-icon"><i data-lucide="timer"></i></div>
-              <div class="point-text">
-                <h4>Your team is drowning in admin</h4>
-                <p>Scheduling, follow-ups, data entry, reporting Tasks that eat hours every week and add zero revenue.</p>
-              </div>
-            </div>
-            <div class="problem-point">
-              <div class="point-icon"><i data-lucide="dollar-sign"></i></div>
-              <div class="point-text">
-                <h4>You're paying for inefficiency</h4>
-                <p>Manual processes, missed leads, slow responses. Every bottleneck costs real money You just can't see it on a report.</p>
-              </div>
-            </div>
-            <div class="problem-point">
-              <div class="point-icon"><i data-lucide="bar-chart-2"></i></div>
-              <div class="point-text">
-                <h4>Revenue is inconsistent</h4>
-                <p>Without a structured sales process or the right leadership, you're relying on effort instead of system. That doesn't scale.</p>
-              </div>
-            </div>
+        <a href="/sales" class="path-card path-card--sales">
+          <div class="path-icon path-icon--blue">
+            <i data-lucide="trending-up"></i>
           </div>
-        </div>
-        <div class="problem-callout">
-          <div class="callout-quote">"I don't need to understand AI. I need my business to run better and my team to close more."</div>
-          <div class="callout-stat-row"><span>SMBs using AI save per month</span><strong>$500 to $2,000</strong></div>
-          <div class="callout-stat-row"><span>Average cost reduction from AI</span><strong>up to 30%</strong></div>
-          <div class="callout-stat-row"><span>Hours reclaimed per week</span><strong>20+ hrs</strong></div>
-          <div class="callout-stat-row"><span>SMBs planning AI investment</span><strong>96%</strong></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services-section" id="services">
-    <div class="section-inner">
-      <p class="section-label">What I Do</p>
-      <h2>Two disciplines. One person.<br />Focused on your growth.</h2>
-      <p class="section-desc">I work at the intersection of AI/technology and revenue leadership the two levers that move businesses fastest.</p>
-
-      <div class="services-tabs">
-        <button class="tab-btn active" onclick="switchTab('ai', this)">
-          <i data-lucide="cpu"></i> AI & Technology
-        </button>
-        <button class="tab-btn" onclick="switchTab('sales', this)">
-          <i data-lucide="trending-up"></i> Sales Leadership
-        </button>
-      </div>
-
-      <!-- AI TAB -->
-      <div class="tab-panel active" id="tab-ai">
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="search"></i></div>
-            <h3>AI Opportunity Audit</h3>
-            <p>A deep-dive into your operations to find exactly where AI makes the biggest impact With a clear ROI picture before you spend a dollar on development.</p>
-            <div class="service-tags"><span class="tag">Discovery Call</span><span class="tag">Paid Assessment</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="workflow"></i></div>
-            <h3>Automation Builds</h3>
-            <p>Turn your most time-consuming workflows into automated systems. Follow-ups, scheduling, invoicing, reporting Built to run without you.</p>
-            <div class="service-tags"><span class="tag">Workflow Automation</span><span class="tag">CRM Integration</span><span class="tag">Triggers</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="bot"></i></div>
-            <h3>AI Tools & Assistants</h3>
-            <p>Custom AI built for your exact use case   customer-facing chatbots, internal knowledge bases, lead qualification, content generation, and more.</p>
-            <div class="service-tags"><span class="tag">Chatbots</span><span class="tag">Lead Capture</span><span class="tag">AI Agents</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="layout-dashboard"></i></div>
-            <h3>Custom Software & Dashboards</h3>
-            <p>When off-the-shelf tools don't fit, I build what does. Web apps, internal dashboards, data pipelines Built lean and built to scale.</p>
-            <div class="service-tags"><span class="tag">Web Apps</span><span class="tag">Dashboards</span><span class="tag">Data Pipelines</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="map"></i></div>
-            <h3>AI Strategy Roadmap</h3>
-            <p>Not sure where to start? I build a prioritized AI roadmap scoped to your budget and designed for your team to actually adopt and use.</p>
-            <div class="service-tags"><span class="tag">Roadmapping</span><span class="tag">ROI Analysis</span><span class="tag">Change Mgmt</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="refresh-cw"></i></div>
-            <h3>Ongoing Optimization</h3>
-            <p>Monthly retainer partnerships for businesses that want to keep improving. Your tools evolve as your business grows.</p>
-            <div class="service-tags"><span class="tag">Monthly Retainer</span><span class="tag">Iteration</span><span class="tag">Priority Support</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SALES TAB -->
-      <div class="tab-panel sales-tab" id="tab-sales">
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="briefcase"></i></div>
-            <h3>Fractional CRO</h3>
-            <p>Get executive-level revenue leadership without the full-time cost. I embed in your business to own pipeline, process, and performance and builds the foundation that scales.</p>
-            <div class="service-tags"><span class="tag">Revenue Strategy</span><span class="tag">Pipeline Ownership</span><span class="tag">Part-Time / Contract</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="target"></i></div>
-            <h3>Sales Process Design</h3>
-            <p>If your team is winging it, you're leaving money everywhere. I build a repeatable, documented sales process built for your deal, your buyer, and your team.</p>
-            <div class="service-tags"><span class="tag">Playbook Build</span><span class="tag">CRM Setup</span><span class="tag">Stage Definition</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="users"></i></div>
-            <h3>AE Mentorship & Coaching</h3>
-            <p>1:1 coaching for account executives and SDRs. Objection handling, discovery frameworks, deal strategy, and the mindset that separates average reps from top performers.</p>
-            <div class="service-tags"><span class="tag">1:1 Coaching</span><span class="tag">Discovery Frameworks</span><span class="tag">Objection Handling</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="presentation"></i></div>
-            <h3>Sales Training Workshops</h3>
-            <p>Half-day or full-day sessions for your entire sales org. Prospecting, pipeline hygiene, negotiation, closing Practical skills your team uses the next day.</p>
-            <div class="service-tags"><span class="tag">Team Workshops</span><span class="tag">Custom Curriculum</span><span class="tag">On-site or Remote</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="git-branch"></i></div>
-            <h3>GTM Strategy</h3>
-            <p>Launching a new product or entering a new market? I build the go-to-market playbook ICP definition, messaging, channel strategy, and metrics that matter.</p>
-            <div class="service-tags"><span class="tag">ICP Definition</span><span class="tag">Messaging</span><span class="tag">Channel Strategy</span></div>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i data-lucide="activity"></i></div>
-            <h3>Revenue Operations</h3>
-            <p>Connect your sales process to your data. CRM hygiene, reporting dashboards, forecasting models So leadership has real visibility into what's working.</p>
-            <div class="service-tags"><span class="tag">CRM Ops</span><span class="tag">Forecasting</span><span class="tag">Reporting</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INDUSTRIES -->
-  <section class="industries" id="industries">
-    <div class="section-inner">
-      <p class="section-label">Industries</p>
-      <h2>I know where to look<br />in your industry.</h2>
-      <p class="section-desc">Every business has its own inefficiencies. These are the ones I've seen up close.</p>
-      <div class="industries-grid">
-        <div class="industry-card" style="border-color:rgba(255,92,43,0.3);background:var(--surface2);">
-          <div class="industry-header">
-            <div class="industry-icon" style="background:rgba(255,92,43,0.15);border-color:rgba(255,92,43,0.35);"><i data-lucide="hard-hat"></i></div>
-            <h3>Contractors &amp; Trades <span style="font-size:0.65rem;font-weight:700;background:rgba(255,92,43,0.15);border:1px solid rgba(255,92,43,0.3);color:var(--accent2);padding:0.15rem 0.5rem;border-radius:100px;vertical-align:middle;margin-left:0.4rem;">Beachhead</span></h3>
-          </div>
-          <ul>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Losing jobs to competitors who respond faster</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Estimates sitting unsent for days</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Follow-ups that never happen after the site visit</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Invoicing that drags out cash flow</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Scheduling chaos between jobs and crews</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>No system to capture reviews after good work</li>
-          </ul>
-        </div>
-        <div class="industry-card">
-          <div class="industry-header">
-            <div class="industry-icon"><i data-lucide="utensils"></i></div>
-            <h3>Restaurants &amp; Hospitality</h3>
-          </div>
-          <ul>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>AI reservation &amp; waitlist management</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Automated review responses</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Inventory &amp; waste forecasting</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Staff scheduling optimization</li>
-          </ul>
-        </div>
-        <div class="industry-card">
-          <div class="industry-header">
-            <div class="industry-icon"><i data-lucide="home"></i></div>
-            <h3>Real Estate &amp; Property</h3>
-          </div>
-          <ul>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>AI-powered lead qualification</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Automated listing descriptions</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Client follow-up sequences</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Market analysis dashboards</li>
-          </ul>
-        </div>
-        <div class="industry-card">
-          <div class="industry-header">
-            <div class="industry-icon"><i data-lucide="heart-pulse"></i></div>
-            <h3>Healthcare & Wellness</h3>
-          </div>
-          <ul>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Appointment scheduling automation</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Patient follow-up & reminders</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Intake form processing</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Insurance workflow automation</li>
-          </ul>
-        </div>
-        <div class="industry-card">
-          <div class="industry-header">
-            <div class="industry-icon"><i data-lucide="shopping-bag"></i></div>
-            <h3>Retail & E-Commerce</h3>
-          </div>
-          <ul>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Inventory forecasting & alerts</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Customer service chatbots</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Abandoned cart recovery</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Product description generation</li>
-          </ul>
-        </div>
-        <div class="industry-card">
-          <div class="industry-header">
-            <div class="industry-icon"><i data-lucide="scale"></i></div>
-            <h3>Professional Services</h3>
-          </div>
-          <ul>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Client onboarding automation</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Document processing & summaries</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Billing & time tracking tools</li>
-            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Internal knowledge assistants</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section>
-    <div class="section-inner">
-      <p class="section-label">How It Works</p>
-      <h2>From conversation to results<br />in four steps.</h2>
-      <p class="section-desc">No jargon. No lengthy proposals. A clear process that moves fast.</p>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <h3>Tell Me Where It Hurts</h3>
-          <p>I ask one question: "where are you losing the most money right now?" That's it. We talk about your job site, your follow-up gaps, your invoicing headaches. No pitch. Just a real conversation.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <h3>Opportunity Assessment</h3>
-          <p>I map out exactly what I'd build or fix, what it costs, and what ROI looks like. You see the full picture before spending a dollar.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <h3>Build & Execute</h3>
-          <p>I move fast, typically 2 to 4 weeks for builds. You stay in the loop throughout and see working results early, not just at delivery.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <h3>Measure & Optimize</h3>
-          <p>We track results from day one. The goal is ROI you can measure, not a tool or process that collects dust after 30 days.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="section-inner">
-      <p class="section-label">Testimonials</p>
-      <h2>What people say.</h2>
-      <p class="section-desc">Real results from real businesses.</p>
-      <div class="testimonials-grid">
-        <div class="testimonial-card" style="border-color:rgba(255,92,43,0.25);position:relative;">
-          <div style="position:absolute;top:1.25rem;left:1.75rem;font-size:0.65rem;font-weight:700;background:rgba(255,92,43,0.12);border:1px solid rgba(255,92,43,0.25);color:var(--accent2);padding:0.15rem 0.55rem;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;">Contractors &amp; Trades</div>
-          <div class="quote-mark"><i data-lucide="quote"></i></div>
-          <div class="stars" style="margin-top:1.75rem;">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-          </div>
-          <p class="testimonial-text">"I walked into an HVAC company on a Tuesday, asked one question — 'what's eating the most of your time?' — they said manually sending estimates and chasing approvals. I built an automated estimate and follow-up workflow live in under an hour. They sent 11 estimates that same day and closed 3 by Friday."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">JL</div>
-            <div>
-              <div class="author-name">Josh Lange</div>
-              <div class="author-title">On-site with HVAC Service Co. · Austin, TX</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark"><i data-lucide="quote"></i></div>
-          <div class="stars">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-          </div>
-          <p class="testimonial-text">"Josh came in, understood our business in one call, and built an automation that saved us 15 hours a week. It paid for itself in the first month. I wish I'd called him sooner."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MR</div>
-            <div>
-              <div class="author-name">Mike R.</div>
-              <div class="author-title">Owner, Residential Contracting Co. · Austin, TX</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark"><i data-lucide="quote"></i></div>
-          <div class="stars">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-          </div>
-          <p class="testimonial-text">"We hired Josh as a fractional CRO for 6 months. He rebuilt our entire sales process from scratch, trained the team, and we hit our best quarter ever in month four. Worth every dollar."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SL</div>
-            <div>
-              <div class="author-name">Sarah L.</div>
-              <div class="author-title">CEO, B2B SaaS Company · Dallas, TX</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark"><i data-lucide="quote"></i></div>
-          <div class="stars">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
-          </div>
-          <p class="testimonial-text">"The AI chatbot Josh built handles 80% of our customer inquiries automatically now. Our team finally has time to focus on the work that actually moves the needle."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">TC</div>
-            <div>
-              <div class="author-name">Tom C.</div>
-              <div class="author-title">Founder, Wellness Studio Group · Chicago, IL</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="section-label">About Josh</p>
-          <h2>I build things<br />that actually work.</h2>
-          <p>I'm a builder and operator, not a slide deck consultant. I've built and run multiple software businesses from scratch which means I know how real businesses operate, where they leak money, and what it takes to ship and sell.</p>
-          <p>When I come into your business, I'm not bringing a generic playbook. <strong>I'm asking the questions nobody else is asking.</strong> Building the specific tools and processes that close your specific gaps.</p>
-          <p>I've led sales teams, built automation systems, and scaled products from zero. That combination of operator experience and technical depth is rare. It's why I can move fast and actually deliver.</p>
-          <p>Based in Austin, TX. Working with businesses across the country.</p>
-          <br />
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="tel:+15123379530" class="btn-primary">
-            <i data-lucide="phone" style="width:16px;height:16px;"></i>
-            Call Josh
-          </a>
-          <a href="https://www.linkedin.com/in/joshdlange/" target="_blank" rel="noopener" class="btn-ghost" style="border-color:rgba(59,130,246,0.4);color:#93c5fd;display:inline-flex;align-items:center;gap:0.45rem;">
-            <i data-lucide="linkedin" style="width:16px;height:16px;"></i>
-            LinkedIn
-          </a>
-          </div>
-        </div>
-        <div class="about-ventures">
-          <p class="venture-label">Built &amp; Operating</p>
-          <div class="venture-item">
-            <div class="venture-info">
-              <div class="venture-icon"><img src="logos/trillage.png" alt="Trillage" /></div>
-              <div>
-                <div class="venture-name">Trillage</div>
-                <div class="venture-desc">PTA fundraising &amp; community platform</div>
-              </div>
-            </div>
-            <span class="venture-badge">Live</span>
-          </div>
-          <div class="venture-item">
-            <div class="venture-info">
-              <div class="venture-icon"><img src="logos/marvel-card-vault.png" alt="Marvel Card Vault" /></div>
-              <div>
-                <div class="venture-name">Marvel Card Vault</div>
-                <div class="venture-desc">Collector marketplace &amp; card tracking</div>
-              </div>
-            </div>
-            <span class="venture-badge">Live</span>
-          </div>
-          <div class="venture-item">
-            <div class="venture-info">
-              <div class="venture-icon"><img src="logos/clarity.png" alt="ClarityPTA" /></div>
-              <div>
-                <div class="venture-name">ClarityPTA</div>
-                <div class="venture-desc">PTA management &amp; engagement tools</div>
-              </div>
-            </div>
-            <span class="venture-badge">Live</span>
-          </div>
-          <div class="venture-item">
-            <div class="venture-info">
-              <div class="venture-icon" style="background:rgba(255,92,43,0.12);border-color:rgba(255,92,43,0.25);">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="1" width="8" height="8" rx="1.5" fill="#ff5c2b" opacity="0.85"/>
-                  <rect x="13" y="1" width="8" height="8" rx="1.5" fill="#ff5c2b" opacity="0.45"/>
-                  <rect x="1" y="13" width="8" height="8" rx="1.5" fill="#ff5c2b" opacity="0.45"/>
-                  <rect x="13" y="13" width="8" height="8" rx="1.5" fill="#ff5c2b" opacity="0.15"/>
-                  <path d="M15 20 L20.5 20 L20.5 14.5" stroke="#ff8c5a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M14.5 15 L20 20" stroke="#ff8c5a" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <div class="venture-name">FieldTrack</div>
-                <div class="venture-desc">Asset &amp; inventory intelligence for field operations</div>
-              </div>
-            </div>
-            <span class="venture-badge">Live</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="section-inner">
-      <p class="section-label">Ready?</p>
-      <h2>Tell me where it hurts.<br />I'll show you something live.</h2>
-      <p>Contractors: just text me. Tell me your biggest headache right now — estimates, follow-ups, scheduling, invoicing. I'll come back with something real, not a slide deck.</p>
-      <div class="cta-actions">
-        <a href="sms:+15123379530" class="btn-primary btn-xl">
-          <i data-lucide="message-square" style="width:18px;height:18px;"></i>
-          Text Me Now
-        </a>
-        <button onclick="openModal()" class="btn-ghost btn-xl" style="border:none;cursor:pointer;font-family:inherit;border:1px solid var(--border);">
-          <i data-lucide="mail" style="width:18px;height:18px;"></i>
-          Send a Message
-        </button>
-        <a href="tel:+15123379530" class="btn-ghost btn-xl">
-          <i data-lucide="phone" style="width:18px;height:18px;"></i>
-          Call
+          <h3>I need Sales Leadership</h3>
+          <p>Build the process, train the team, and fix the revenue inconsistency — without paying for a full-time CRO.</p>
+          <span class="path-arrow">Explore <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
         </a>
       </div>
+
+      <a href="/work" class="projects-strip">
+        <span class="projects-strip-label">Also built</span>
+        <span class="projects-strip-sep">·</span>
+        <span class="projects-strip-item">Trillage</span>
+        <span class="projects-strip-sep">·</span>
+        <span class="projects-strip-item">Marvel Card Vault</span>
+        <span class="projects-strip-sep">·</span>
+        <span class="projects-strip-item">ClarityPTA</span>
+        <span class="projects-strip-sep">·</span>
+        <span class="projects-strip-item">FieldTrack</span>
+        <span class="projects-strip-sep">·</span>
+        <span class="projects-strip-cta">See all work <i data-lucide="arrow-right" style="width:12px;height:12px;"></i></span>
+      </a>
     </div>
   </section>
 
@@ -867,34 +218,11 @@
   </footer>
 
   <script>
-    // Initialize Lucide icons
     lucide.createIcons();
-
-    // Tab switcher
-    function switchTab(tab, btn) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + tab).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    // Modal open/close
-    function openModal() {
-      document.getElementById('contactModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      document.getElementById('contactModal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function handleModalClick(e) {
-      if (e.target === document.getElementById('contactModal')) closeModal();
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    // Contact form handler — Web3Forms
+    function openModal() { document.getElementById('contactModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { document.getElementById('contactModal').classList.remove('open'); document.body.style.overflow = ''; }
+    function handleModalClick(e) { if (e.target === document.getElementById('contactModal')) closeModal(); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
     async function handleFormSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('formSubmitBtn');
@@ -902,47 +230,20 @@
       const successEl = document.getElementById('formSuccess');
       const errorEl = document.getElementById('formError');
       const form = document.getElementById('contactForm');
-
-      btn.disabled = true;
-      btnText.innerHTML = 'Sending...';
-      successEl.style.display = 'none';
-      errorEl.style.display = 'none';
-
-      // Fire GA4 qualify_lead event
+      btn.disabled = true; btnText.innerHTML = 'Sending...';
+      successEl.style.display = 'none'; errorEl.style.display = 'none';
       const company = document.getElementById('cf-company').value.trim();
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'qualify_lead', {
-          event_category: 'lead',
-          event_label: company || 'unknown',
-        });
-      }
-
+      if (typeof gtag !== 'undefined') gtag('event', 'qualify_lead', { event_category: 'lead', event_label: company || 'unknown' });
       try {
-        const formData = new FormData(form);
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: formData
-        });
+        const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
         const data = await response.json();
-
-        if (data.success) {
-          successEl.style.display = 'block';
-          form.reset();
-          lucide.createIcons();
-        } else {
-          throw new Error(data.message || 'Submission failed');
-        }
-      } catch (err) {
-        errorEl.style.display = 'block';
-      } finally {
-        btn.disabled = false;
-        btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It';
-        lucide.createIcons();
-      }
+        if (data.success) { successEl.style.display = 'block'; form.reset(); lucide.createIcons(); }
+        else throw new Error(data.message);
+      } catch { errorEl.style.display = 'block'; }
+      finally { btn.disabled = false; btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It'; lucide.createIcons(); }
     }
   </script>
 
-  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -952,31 +253,8 @@
     "url": "https://joshdlange.com",
     "email": "josh@trillage.io",
     "telephone": "+15123379530",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Austin",
-      "addressRegion": "TX",
-      "addressCountry": "US"
-    },
-    "sameAs": ["https://www.linkedin.com/in/joshdlange/"],
-    "knowsAbout": ["AI Automation", "Sales Leadership", "Revenue Growth", "Custom Software Development", "Business Consulting"],
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "AI Opportunity Audit",
-        "description": "A deep-dive into your operations to find exactly where AI makes the biggest impact."
-      },
-      {
-        "@type": "Offer",
-        "name": "Fractional CRO",
-        "description": "Executive-level revenue leadership without the full-time cost."
-      },
-      {
-        "@type": "Offer",
-        "name": "Automation Builds",
-        "description": "Turn your most time-consuming workflows into automated systems."
-      }
-    ]
+    "address": { "@type": "PostalAddress", "addressLocality": "Austin", "addressRegion": "TX", "addressCountry": "US" },
+    "sameAs": ["https://www.linkedin.com/in/joshdlange/"]
   }
   </script>
 </body>

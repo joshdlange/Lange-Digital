@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR5KVHY4S3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FR5KVHY4S3');
+  </script>
+  <title>AI & Automation for Contractors & Trades | Josh Lange — Austin, TX</title>
+  <meta name="description" content="Stop losing jobs to slow follow-up. Josh Lange builds AI automation systems for contractors and trades businesses in Austin, TX — estimates, invoicing, scheduling, and lead follow-up." />
+  <meta property="og:title" content="AI & Automation for Contractors & Trades | Josh Lange" />
+  <meta property="og:description" content="Estimates unsent. Follow-ups missed. Jobs lost. Josh walks into your business, asks one question, and builds something live that fixes it." />
+  <meta property="og:url" content="https://joshdlange.com/ai" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://joshdlange.com/ai/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    /* ── INDUSTRIES ── */
+    .industries-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .industry-card { background: var(--black); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: border-color 0.2s; }
+    .industry-card:hover { border-color: rgba(255,92,43,0.3); }
+    .industry-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .industry-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,92,43,0.08); border: 1px solid rgba(255,92,43,0.15); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+    .industry-icon svg { width: 17px; height: 17px; }
+    .industry-card h3 { font-size: 0.95rem; font-weight: 700; }
+    .industry-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .industry-card ul li { font-size: 0.835rem; color: var(--muted); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5; }
+    .industry-li-arrow { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+    .industry-li-arrow svg { width: 11px; height: 11px; }
+
+    /* ── PROCESS ── */
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; }
+    .step-num { font-size: 3.5rem; font-weight: 900; color: rgba(255,92,43,0.38); line-height: 1; margin-bottom: 0.75rem; letter-spacing: -0.04em; }
+    .process-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .process-step p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Josh <span>Lange</span></a>
+    <ul class="nav-links">
+      <li><a href="/ai" class="active">AI &amp; Automation</a></li>
+      <li><a href="/sales">Sales Leadership</a></li>
+      <li><a href="/work">Work</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://www.linkedin.com/in/joshdlange/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.35rem;"><i data-lucide="linkedin" style="width:14px;height:14px;"></i>LinkedIn</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+15123379530" class="nav-phone">
+        <i data-lucide="phone" style="width:13px;height:13px;"></i>
+        (512) 337-9530
+      </a>
+      <button class="nav-cta" onclick="openModal()">
+        <i data-lucide="mail" style="width:14px;height:14px;"></i>
+        Let's Talk
+      </button>
+    </div>
+  </nav>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal" onclick="handleModalClick(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()"><i data-lucide="x"></i></button>
+      <div class="modal-title">Tell me where it hurts.</div>
+      <div class="modal-sub">30 seconds. I'll respond within one business day.</div>
+      <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+        <input type="hidden" name="access_key" value="f66de079-06ac-4141-9c70-c27ed360c578" />
+        <input type="hidden" name="subject" value="New inquiry from joshdlange.com/ai" />
+        <input type="hidden" name="from_name" value="joshdlange.com/ai" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-company">Company</label>
+          <input type="text" id="cf-company" name="company" placeholder="e.g. Rodriguez HVAC · Austin, TX" autocomplete="organization" />
+        </div>
+        <div class="form-group">
+          <label for="cf-problem">Where are you losing the most money right now?</label>
+          <textarea id="cf-problem" name="message" rows="4" placeholder="e.g. Estimates take days to go out, leads never hear back from us..." required></textarea>
+        </div>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+          <button type="submit" class="btn-primary form-submit-btn" id="formSubmitBtn" style="padding:0.85rem 1.75rem;font-size:0.975rem;">
+            <span id="formBtnText"><i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It</span>
+          </button>
+          <a href="sms:+15123379530" class="btn-ghost" style="padding:0.85rem 1.75rem;font-size:0.975rem;display:inline-flex;align-items:center;gap:0.45rem;">
+            <i data-lucide="message-square" style="width:16px;height:16px;"></i>
+            Text Me Instead
+          </a>
+        </div>
+        <div id="formSuccess" class="form-success" style="display:none;"><i data-lucide="check-circle" style="width:20px;height:20px;vertical-align:-4px;margin-right:8px;color:#22c55e;"></i>Got it — I'll be in touch within one business day.</div>
+        <div id="formError" class="form-error" style="display:none;">Something went wrong. Email me at <a href="mailto:josh@trillage.io">josh@trillage.io</a>.</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <i data-lucide="hard-hat"></i>
+        Contractors &amp; Trades · Austin, TX · AI &amp; Automation
+      </div>
+      <h1>Contractors: where are you<br />losing the <em>most money?</em></h1>
+      <p class="hero-sub">
+        Estimates sitting unsent. Leads you didn't follow up on. Invoices taking days to go out. I walk onto your job site, ask one question, and show you something live that fixes it — fast.
+      </p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="file-text"></i> Estimates &amp; Invoicing</span>
+        <span class="hero-pill"><i data-lucide="calendar"></i> Job Scheduling</span>
+        <span class="hero-pill"><i data-lucide="bell"></i> Lead Follow-Up</span>
+        <span class="hero-pill"><i data-lucide="code-2"></i> Custom Builds</span>
+      </div>
+      <div class="hero-actions">
+        <a href="sms:+15123379530" class="btn-primary btn-xl">
+          <i data-lucide="message-square" style="width:18px;height:18px;"></i>
+          Text Me Now
+        </a>
+        <button onclick="openModal()" class="btn-ghost btn-xl">
+          <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+          Book a Call
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div>
+        <span class="stat-num">2–4 jobs</span>
+        <div class="stat-label">average contractor loses monthly to slow follow-up</div>
+      </div>
+      <div>
+        <span class="stat-num">48 hrs</span>
+        <div class="stat-label">average time to respond to a new lead — competitors do it in minutes</div>
+      </div>
+      <div>
+        <span class="stat-num">78%</span>
+        <div class="stat-label">of jobs go to whoever responds first — not cheapest</div>
+      </div>
+      <div>
+        <span class="stat-num">$1,200+</span>
+        <div class="stat-label">average value of a single missed or ghosted estimate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section-bg">
+    <div class="section-inner">
+      <p class="section-label">What I Build</p>
+      <h2>AI &amp; automation built<br />for real businesses.</h2>
+      <p class="section-desc">Not generic software. Custom systems that plug the exact leaks in your specific operation.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="search"></i></div>
+          <h3>AI Opportunity Audit</h3>
+          <p>A deep-dive into your operations to find exactly where AI makes the biggest impact — with a clear ROI picture before you spend a dollar on development.</p>
+          <div class="service-tags"><span class="tag">Discovery Call</span><span class="tag">Paid Assessment</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="workflow"></i></div>
+          <h3>Automation Builds</h3>
+          <p>Turn your most time-consuming workflows into automated systems. Follow-ups, scheduling, invoicing, reporting — built to run without you.</p>
+          <div class="service-tags"><span class="tag">Workflow Automation</span><span class="tag">CRM Integration</span><span class="tag">Triggers</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="bot"></i></div>
+          <h3>AI Tools &amp; Assistants</h3>
+          <p>Custom AI built for your exact use case — customer-facing chatbots, internal knowledge bases, lead qualification, content generation, and more.</p>
+          <div class="service-tags"><span class="tag">Chatbots</span><span class="tag">Lead Capture</span><span class="tag">AI Agents</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="layout-dashboard"></i></div>
+          <h3>Custom Software &amp; Dashboards</h3>
+          <p>When off-the-shelf tools don't fit, I build what does. Web apps, internal dashboards, data pipelines — built lean and built to scale.</p>
+          <div class="service-tags"><span class="tag">Web Apps</span><span class="tag">Dashboards</span><span class="tag">Data Pipelines</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="map"></i></div>
+          <h3>AI Strategy Roadmap</h3>
+          <p>Not sure where to start? I build a prioritized AI roadmap scoped to your budget and designed for your team to actually adopt and use.</p>
+          <div class="service-tags"><span class="tag">Roadmapping</span><span class="tag">ROI Analysis</span><span class="tag">Change Mgmt</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i data-lucide="refresh-cw"></i></div>
+          <h3>Ongoing Optimization</h3>
+          <p>Monthly retainer partnerships for businesses that want to keep improving. Your tools evolve as your business grows.</p>
+          <div class="service-tags"><span class="tag">Monthly Retainer</span><span class="tag">Iteration</span><span class="tag">Priority Support</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section>
+    <div class="section-inner">
+      <p class="section-label">Industries</p>
+      <h2>I know where to look<br />in your industry.</h2>
+      <p class="section-desc">Every business has its own inefficiencies. These are the ones I've seen up close.</p>
+      <div class="industries-grid">
+        <div class="industry-card" style="border-color:rgba(255,92,43,0.3);background:var(--surface2);">
+          <div class="industry-header">
+            <div class="industry-icon" style="background:rgba(255,92,43,0.15);border-color:rgba(255,92,43,0.35);"><i data-lucide="hard-hat"></i></div>
+            <h3>Contractors &amp; Trades <span style="font-size:0.65rem;font-weight:700;background:rgba(255,92,43,0.15);border:1px solid rgba(255,92,43,0.3);color:var(--accent2);padding:0.15rem 0.5rem;border-radius:100px;vertical-align:middle;margin-left:0.4rem;">Focus</span></h3>
+          </div>
+          <ul>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Losing jobs to competitors who respond faster</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Estimates sitting unsent for days</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Follow-ups that never happen after the site visit</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Invoicing that drags out cash flow</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Scheduling chaos between jobs and crews</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>No system to capture reviews after good work</li>
+          </ul>
+        </div>
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon"><i data-lucide="utensils"></i></div>
+            <h3>Restaurants &amp; Hospitality</h3>
+          </div>
+          <ul>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>AI reservation &amp; waitlist management</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Automated review responses</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Inventory &amp; waste forecasting</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Staff scheduling optimization</li>
+          </ul>
+        </div>
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon"><i data-lucide="home"></i></div>
+            <h3>Real Estate &amp; Property</h3>
+          </div>
+          <ul>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>AI-powered lead qualification</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Automated listing descriptions</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Client follow-up sequences</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Market analysis dashboards</li>
+          </ul>
+        </div>
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon"><i data-lucide="heart-pulse"></i></div>
+            <h3>Healthcare &amp; Wellness</h3>
+          </div>
+          <ul>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Appointment scheduling automation</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Patient follow-up &amp; reminders</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Intake form processing</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Insurance workflow automation</li>
+          </ul>
+        </div>
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon"><i data-lucide="shopping-bag"></i></div>
+            <h3>Retail &amp; E-Commerce</h3>
+          </div>
+          <ul>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Inventory forecasting &amp; alerts</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Customer service chatbots</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Abandoned cart recovery</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Product description generation</li>
+          </ul>
+        </div>
+        <div class="industry-card">
+          <div class="industry-header">
+            <div class="industry-icon"><i data-lucide="scale"></i></div>
+            <h3>Professional Services</h3>
+          </div>
+          <ul>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Client onboarding automation</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Document processing &amp; summaries</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Billing &amp; time tracking tools</li>
+            <li><span class="industry-li-arrow"><i data-lucide="chevron-right"></i></span>Internal knowledge assistants</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section-bg">
+    <div class="section-inner">
+      <p class="section-label">How It Works</p>
+      <h2>From conversation to results<br />in four steps.</h2>
+      <p class="section-desc">No jargon. No lengthy proposals. A clear process that moves fast.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h3>Tell Me Where It Hurts</h3>
+          <p>I ask one question: "where are you losing the most money right now?" We talk about your job site, your follow-up gaps, your invoicing headaches. No pitch. Just a real conversation.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h3>Opportunity Assessment</h3>
+          <p>I map out exactly what I'd build or fix, what it costs, and what ROI looks like. You see the full picture before spending a dollar.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h3>Build &amp; Execute</h3>
+          <p>I move fast — typically 2 to 4 weeks for builds. You stay in the loop throughout and see working results early, not just at delivery.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h3>Measure &amp; Optimize</h3>
+          <p>We track results from day one. The goal is ROI you can measure, not a tool that collects dust after 30 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="section-inner">
+      <p class="section-label">Results</p>
+      <h2>What one question can uncover.</h2>
+      <p class="section-desc">Real outcomes from real businesses.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" style="border-color:rgba(255,92,43,0.25);">
+          <div style="position:absolute;top:1.25rem;left:1.75rem;font-size:0.65rem;font-weight:700;background:rgba(255,92,43,0.12);border:1px solid rgba(255,92,43,0.25);color:var(--accent2);padding:0.15rem 0.55rem;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;">Contractors &amp; Trades</div>
+          <div class="quote-mark"><i data-lucide="quote"></i></div>
+          <div class="stars" style="margin-top:1.75rem;">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"I walked into an HVAC company on a Tuesday, asked one question — 'what's eating the most of your time?' — they said manually sending estimates and chasing approvals. I built an automated estimate and follow-up workflow live in under an hour. They sent 11 estimates that same day and closed 3 by Friday."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <div class="author-name">Josh Lange</div>
+              <div class="author-title">On-site with HVAC Service Co. · Austin, TX</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark"><i data-lucide="quote"></i></div>
+          <div class="stars">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"Josh came in, understood our business in one call, and built an automation that saved us 15 hours a week. It paid for itself in the first month. I wish I'd called him sooner."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <div class="author-name">Mike R.</div>
+              <div class="author-title">Owner, Residential Contracting Co. · Austin, TX</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark"><i data-lucide="quote"></i></div>
+          <div class="stars">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"The AI chatbot Josh built handles 80% of our customer inquiries automatically now. Our team finally has time to focus on the work that actually moves the needle."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TC</div>
+            <div>
+              <div class="author-name">Tom C.</div>
+              <div class="author-title">Founder, Wellness Studio Group · Chicago, IL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <p class="section-label">Ready?</p>
+      <h2>Tell me where it hurts.<br />I'll show you something live.</h2>
+      <p>Contractors: just text me. Tell me your biggest headache — estimates, follow-ups, scheduling, invoicing. I'll come back with something real, not a slide deck.</p>
+      <div class="cta-actions">
+        <a href="sms:+15123379530" class="btn-primary btn-xl">
+          <i data-lucide="message-square" style="width:18px;height:18px;"></i>
+          Text Me Now
+        </a>
+        <button onclick="openModal()" class="btn-ghost btn-xl">
+          <i data-lucide="mail" style="width:18px;height:18px;"></i>
+          Send a Message
+        </button>
+        <a href="tel:+15123379530" class="btn-ghost btn-xl">
+          <i data-lucide="phone" style="width:18px;height:18px;"></i>
+          Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Josh Lange · Austin, TX · <a href="tel:+15123379530">(512) 337-9530</a> · <a href="mailto:josh@trillage.io">josh@trillage.io</a></p>
+    <p style="margin-top:0.5rem; font-size:0.72rem; opacity:0.6;">A Jackaroni Entertainment company</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    function openModal() { document.getElementById('contactModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { document.getElementById('contactModal').classList.remove('open'); document.body.style.overflow = ''; }
+    function handleModalClick(e) { if (e.target === document.getElementById('contactModal')) closeModal(); }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('formSubmitBtn');
+      const btnText = document.getElementById('formBtnText');
+      const successEl = document.getElementById('formSuccess');
+      const errorEl = document.getElementById('formError');
+      const form = document.getElementById('contactForm');
+      btn.disabled = true; btnText.innerHTML = 'Sending...';
+      successEl.style.display = 'none'; errorEl.style.display = 'none';
+      const company = document.getElementById('cf-company').value.trim();
+      if (typeof gtag !== 'undefined') gtag('event', 'qualify_lead', { event_category: 'lead', event_label: company || 'unknown', event_source: 'ai-page' });
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+        const data = await response.json();
+        if (data.success) { successEl.style.display = 'block'; form.reset(); lucide.createIcons(); }
+        else throw new Error(data.message);
+      } catch { errorEl.style.display = 'block'; }
+      finally { btn.disabled = false; btnText.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;display:inline;vertical-align:-2px;margin-right:6px;"></i>Send It'; lucide.createIcons(); }
+    }
+  </script>
+</body>
+</html>
