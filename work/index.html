@@ -13,9 +13,9 @@
     gtag('config', 'G-FR5KVHY4S3');
   </script>
   <title>Work & Projects | Josh Lange — Austin, TX</title>
-  <meta name="description" content="Products built and operating by Josh Lange: Trillage, Marvel Card Vault, ClarityPTA, FieldTrack. Plus client case studies." />
+  <meta name="description" content="Products shipped by Josh Lange across industries: Trillage, Marvel Card Vault, ClarityPTA, FieldTrack, Hello Peri, Action Layer, SillyBros. Plus client case studies." />
   <meta property="og:title" content="Work & Projects | Josh Lange" />
-  <meta property="og:description" content="Things I've built that actually work. Products, client work, and case studies." />
+  <meta property="og:description" content="Built across industries. Shipped for real. From fintech to fitness, SaaS to trades." />
   <meta property="og:url" content="https://joshdlange.com/work" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://joshdlange.com/work/" />
@@ -56,7 +56,20 @@
     .project-name { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; }
     .live-badge { font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 100px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); color: var(--green); white-space: nowrap; display: flex; align-items: center; gap: 0.3rem; }
     .live-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); display: inline-block; }
-    .project-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .project-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.85rem; }
+    .project-visit { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; font-weight: 700; color: var(--accent); text-decoration: none; transition: gap 0.15s; }
+    .project-visit:hover { gap: 0.5rem; }
+
+    /* ── NDA CARD ── */
+    .nda-card {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-top: 2rem; padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .nda-icon { width: 32px; height: 32px; border-radius: 7px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); flex-shrink: 0; margin-top: 1px; }
+    .nda-icon svg { width: 14px; height: 14px; }
+    .nda-card p { font-size: 0.855rem; color: var(--muted); line-height: 1.65; }
 
     /* ── CASE STUDIES ── */
     .case-study-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
@@ -155,20 +168,20 @@
   <div class="page-hero">
     <div class="page-hero-inner">
       <p class="section-label">Work &amp; Projects</p>
-      <h1>Things I've built that<br /><em>actually work.</em></h1>
-      <p>Products I own and operate, plus client work that moved the needle.</p>
+      <h1>Built across industries.<br /><em>Shipped for real.</em></h1>
+      <p>From fintech to fitness, SaaS to trades — I build products, not decks.</p>
     </div>
   </div>
 
   <!-- PROJECTS -->
   <section>
     <div class="section-inner">
-      <p class="section-label">Built &amp; Operating</p>
-      <h2>Products I own.</h2>
-      <p class="section-desc">These aren't case studies — they're live businesses I built from scratch and still run.</p>
+      <p class="section-label">Products I've Shipped</p>
+      <h2>A range of industries,<br />real products, real users.</h2>
+      <p class="section-desc">These aren't case studies — they're live products I built from scratch.</p>
       <div class="projects-grid">
         <div class="project-card">
-          <div class="project-logo"><img src="/logos/trillage.png" alt="Trillage" /></div>
+          <div class="project-logo"><img src="https://www.google.com/s2/favicons?domain=trillage.io&sz=128" alt="Trillage" /></div>
           <div class="project-header">
             <div class="project-name">Trillage</div>
             <span class="live-badge">Live</span>
@@ -184,7 +197,7 @@
           <p class="project-desc">Collector marketplace &amp; card tracking platform. Built for Marvel trading card enthusiasts who want to catalog and trade.</p>
         </div>
         <div class="project-card">
-          <div class="project-logo"><img src="/logos/clarity.png" alt="ClarityPTA" /></div>
+          <div class="project-logo"><img src="https://www.google.com/s2/favicons?domain=claritypta.com&sz=128" alt="ClarityPTA" /></div>
           <div class="project-header">
             <div class="project-name">ClarityPTA</div>
             <span class="live-badge">Live</span>
@@ -208,6 +221,39 @@
           </div>
           <p class="project-desc">Asset &amp; inventory intelligence for field operations. Built for businesses that need to know where their stuff is and when it's being used.</p>
         </div>
+        <div class="project-card">
+          <div class="project-logo"><img src="https://www.google.com/s2/favicons?domain=helloperi.ai&sz=128" alt="Hello Peri" /></div>
+          <div class="project-header">
+            <div class="project-name">Hello Peri</div>
+            <span class="live-badge">Live</span>
+          </div>
+          <p class="project-desc">AI-powered perimenopause support for women navigating the transition.</p>
+          <a href="https://helloperi.ai" target="_blank" rel="noopener" class="project-visit">Visit <i data-lucide="arrow-up-right" style="width:11px;height:11px;"></i></a>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><img src="https://www.google.com/s2/favicons?domain=actionlayer.replit.app&sz=128" alt="Action Layer" /></div>
+          <div class="project-header">
+            <div class="project-name">Action Layer</div>
+            <span class="live-badge">Live</span>
+          </div>
+          <p class="project-desc">Productivity and task action platform built on Replit.</p>
+          <a href="https://actionlayer.replit.app" target="_blank" rel="noopener" class="project-visit">Visit <i data-lucide="arrow-up-right" style="width:11px;height:11px;"></i></a>
+        </div>
+        <div class="project-card">
+          <div class="project-logo"><img src="https://www.google.com/s2/favicons?domain=sillybros.com&sz=128" alt="SillyBros" /></div>
+          <div class="project-header">
+            <div class="project-name">SillyBros.com</div>
+            <span class="live-badge">Live</span>
+          </div>
+          <p class="project-desc">Entertainment and community platform.</p>
+          <a href="https://sillybros.com" target="_blank" rel="noopener" class="project-visit">Visit <i data-lucide="arrow-up-right" style="width:11px;height:11px;"></i></a>
+        </div>
+      </div>
+
+      <!-- NDA DISCLAIMER -->
+      <div class="nda-card">
+        <div class="nda-icon"><i data-lucide="lock"></i></div>
+        <p>Not everything I've built is mine to show. I take client privacy and NDAs seriously — some of my best work lives behind an agreement.</p>
       </div>
     </div>
   </section>
