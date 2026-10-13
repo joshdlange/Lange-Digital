@@ -292,3 +292,5 @@ h2{font:700 clamp(36px,4.6vw,64px)/1.02 var(--display);letter-spacing:-.04em}
 .about .one + .btn{margin-top:28px}
 @media(max-width:900px){.cta .slot{margin:12px auto 0}}
 .about-me .mono{grid-row:auto}.about-me{margin-bottom:34px}
+.about-photo{margin:32px 0 0}.about-photo img{display:block;width:240px;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:1px solid var(--line2)}
+@media(max-width:700px){.about-photo img{width:180px}}
