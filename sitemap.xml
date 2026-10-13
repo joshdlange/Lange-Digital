@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://joshdlange.com/</loc>
-    <lastmod>2026-03-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://joshdlange.com/</loc></url>
+  <url><loc>https://joshdlange.com/assessment.html</loc></url>
+  <url><loc>https://joshdlange.com/revenue.html</loc></url>
+  <url><loc>https://joshdlange.com/products.html</loc></url>
+  <url><loc>https://joshdlange.com/products/trillage.html</loc></url>
+  <url><loc>https://joshdlange.com/products/peridot.html</loc></url>
+  <url><loc>https://joshdlange.com/products/marvel-card-vault.html</loc></url>
+  <url><loc>https://joshdlange.com/products/actionlayer.html</loc></url>
+  <url><loc>https://joshdlange.com/products/claritypta.html</loc></url>
+  <url><loc>https://joshdlange.com/products/silly-bros.html</loc></url>
 </urlset>
