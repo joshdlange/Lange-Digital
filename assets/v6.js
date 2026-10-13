@@ -5,23 +5,6 @@
   var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // Photo: the build marks the body when img/josh.jpg exists, so no 404 probe runs without it.
-  // The JL monogram is the designed stand-in; the photo replaces it and fills the hidden slots.
-  if (document.body.hasAttribute('data-photo-ready')) {
-    var probe = new Image();
-    probe.onload = function () {
-      var make = function () { var img = document.createElement('img'); img.src = 'img/josh.jpg'; img.alt = 'Josh Lange'; img.decoding = 'async'; img.width = probe.naturalWidth; img.height = probe.naturalHeight; return img; };
-      $('[data-photo-face] .mono').forEach(function (m) { m.appendChild(make()); });
-      $('[data-photo]').forEach(function (box) {
-        box.appendChild(make());
-        var cap = box.getAttribute('data-caption');
-        if (cap) { var fc = document.createElement('figcaption'); fc.textContent = cap; box.appendChild(fc); }
-      });
-      document.body.classList.add('has-photo');
-    };
-    probe.src = 'img/josh.jpg';
-  }
-
   // Product strip arrows
   $('.strip-wrap').forEach(function (w) {
     var s = w.querySelector('.strip');
