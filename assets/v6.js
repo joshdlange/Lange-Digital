@@ -41,6 +41,12 @@
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
   var mm = gsap.matchMedia();
+  // Draw-on from the real path length; the dash is removed at the end so the stroke stays fully drawn.
+  var drawAt = function (tl, p, vars, pos) {
+    var len = Math.ceil(p.getTotalLength()) + 1;
+    p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+    tl.to(p, Object.assign({ strokeDashoffset: 0, onComplete: function () { p.style.strokeDasharray = 'none'; p.style.strokeDashoffset = '0'; } }, vars), pos);
+  };
   mm.add('(prefers-reduced-motion: no-preference)', function () {
     gsap.from('.a-in', { y: 28, opacity: 0, duration: .9, ease: 'power3.out', stagger: .1, delay: .1, clearProps: 'all' });
 
@@ -68,13 +74,15 @@
       tl.from($('.pile rect', a), { scaleX: 0, transformOrigin: 'left center', duration: .5, stagger: .1 })
         .from($('.go', a), { opacity: 0, x: -10, duration: .4 }, '-=.1')
         .from($('.big', a), { scale: 0, transformOrigin: 'center', duration: .6, ease: 'back.out(2)' })
-        .from($('.chk', a), { strokeDashoffset: 60, duration: .5 }, '-=.2');
+        ;
+      drawAt(tl, $('.chk', a)[0], { duration: .5 }, '-=.2');
     });
     $('.tile.rev .art').forEach(function (a) {
       var tl = gsap.timeline({ scrollTrigger: { trigger: a, start: 'top 85%', once: true } });
       tl.from($('.bars rect', a), { scaleY: 0, transformOrigin: 'bottom', duration: .5, stagger: .07 })
-        .from($('.ln', a), { strokeDashoffset: 420, duration: 1.1, ease: 'power2.out' }, '-=.3')
-        .from($('.hd', a), { opacity: 0, scale: 0, transformOrigin: 'center', duration: .3 });
+        ;
+      drawAt(tl, $('.ln', a)[0], { duration: 1.1, ease: 'power2.out' }, '-=.3');
+      tl.from($('.hd', a), { opacity: 0, scale: 0, transformOrigin: 'center', duration: .3 });
     });
 
     // ticks
@@ -83,7 +91,8 @@
     });
     // trend line
     $('.trend path.ln').forEach(function (p) {
-      gsap.from(p, { strokeDashoffset: 400, duration: 1.4, delay: .6, ease: 'power2.out' });
+      var tl = gsap.timeline({ delay: .6, scrollTrigger: { trigger: p, start: 'top 90%', once: true } });
+      drawAt(tl, p, { duration: 1.4, ease: 'power2.out' }, 0);
     });
 
     // flow diagrams
@@ -93,7 +102,7 @@
         tl.from($('.dot', n), { scale: 0, duration: .55, ease: 'back.out(2)' }, k * .55)
           .from($('b,span', n), { y: 14, opacity: 0, duration: .5, stagger: .08 }, k * .55 + .25);
         var a = $('.arr', f)[k];
-        if (a) tl.from($('path', a), { strokeDashoffset: 60, duration: .5 }, k * .55 + .35);
+        if (a) drawAt(tl, $('path', a)[0], { duration: .5 }, k * .55 + .35);
       });
     });
   });

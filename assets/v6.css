@@ -269,7 +269,7 @@ h2{font:700 clamp(36px,4.6vw,64px)/1.02 var(--display);letter-spacing:-.04em}
 .laptop .bar em{text-decoration:none}
 
 /* v6.1 photos */
-.me .mono img{object-position:50% 0;transform:scale(1.35);transform-origin:38% 0;transition:filter .6s var(--ease),transform .6s var(--ease)}
+.me .mono img{object-position:50% 20%;transition:filter .6s var(--ease)}
 @media(hover:hover) and (pointer:fine){.me .mono img{filter:grayscale(1) contrast(1.05)}.me:hover .mono img,.me:focus-within .mono img{filter:none}}
 .me .mono{width:76px;height:76px;background:var(--panel2)}
 .me.card .mono{width:84px;height:84px}
@@ -294,3 +294,7 @@ h2{font:700 clamp(36px,4.6vw,64px)/1.02 var(--display);letter-spacing:-.04em}
 .about-me .mono{grid-row:auto}.about-me{margin-bottom:34px}
 .about-photo{margin:32px 0 0}.about-photo img{display:block;width:240px;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:1px solid var(--line2)}
 @media(max-width:700px){.about-photo img{width:180px}}
+
+/* one photo: lake crop in the circle, B/W at rest on hover devices, color on touch */
+.hero-art{border-radius:28px;background:var(--sky);padding:clamp(22px,3vw,44px);box-shadow:0 50px 90px -40px rgba(0,0,0,.9)}
+.hero-art svg{display:block;width:100%;height:auto}
