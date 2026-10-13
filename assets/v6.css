@@ -269,7 +269,7 @@ h2{font:700 clamp(36px,4.6vw,64px)/1.02 var(--display);letter-spacing:-.04em}
 .laptop .bar em{text-decoration:none}
 
 /* v6.1 photos */
-.me .mono img{transform:scale(1.55);transform-origin:46% 24%;transition:filter .6s var(--ease),transform .6s var(--ease)}
+.me .mono img{object-position:50% 0;transform:scale(1.35);transform-origin:38% 0;transition:filter .6s var(--ease),transform .6s var(--ease)}
 @media(hover:hover) and (pointer:fine){.me .mono img{filter:grayscale(1) contrast(1.05)}.me:hover .mono img,.me:focus-within .mono img{filter:none}}
 .me .mono{width:76px;height:76px;background:var(--panel2)}
 .me.card .mono{width:84px;height:84px}
