@@ -1,6 +1,6 @@
 ---
 title: "The answers that live in one person's head"
-date: 2026-10-14
+date: 2026-10-11
 description: "When the answers your business needs sit in calls, documents and one person's memory, that is a bottleneck. Here is how to find it and fix it for good."
 keyword: "build ai agent for my business"
 ---

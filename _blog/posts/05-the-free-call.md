@@ -1,6 +1,6 @@
 ---
 title: "What happens on a free AI call, and why it starts with a bottleneck"
-date: 2026-10-14
+date: 2026-10-13
 description: "A step-by-step look at the free AI assessment call: you describe your week, we find the bottleneck, you leave with one place to start."
 keyword: "ai consultant for small business"
 ---

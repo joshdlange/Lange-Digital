@@ -1,6 +1,6 @@
 ---
 title: "The same data, typed three times"
-date: 2026-10-14
+date: 2026-10-10
 description: "Retyping the same information into different tools is a bottleneck. Here is how to spot it and fix it for the long term."
 keyword: "custom software for small business"
 ---

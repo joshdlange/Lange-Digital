@@ -318,3 +318,15 @@ h2{font:700 clamp(36px,4.6vw,64px)/1.02 var(--display);letter-spacing:-.04em}
 .prose ul,.prose ol{margin:0 0 1.3em;padding-left:1.3em}.prose li{margin-bottom:.6em}.prose strong{color:var(--text)}
 .prose a{color:var(--sky);text-underline-offset:3px}.prose a:hover{color:var(--lime)}
 .prose .callout{margin:1.6em 0;padding:24px 26px;border-radius:18px;background:var(--lime);color:var(--bg)}.prose .callout strong{color:var(--bg)}.prose .callout a{color:var(--bg);font-weight:700}
+
+/* blog byline + author box */
+.byline-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 40px}
+.byline-row .byline{margin:0}
+.me.by-me .mono{width:44px;height:44px;grid-row:1/3}.me.by-me{column-gap:12px}
+.me.by-me figcaption{font-size:15px}.me.by-me figcaption b{font-size:16px}.me.by-me .me-line{font-size:13.5px;color:var(--dim)}
+.me.by-me .me-line a,.authorbox a{color:var(--sky);text-underline-offset:3px}
+.authorbox{margin:56px 0 0;padding:26px 28px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}
+.me.author-me .mono{width:72px;height:72px;grid-row:1/3}
+.authorbox .me-line a{color:var(--sky)}
+.authorbox .ab-cta{margin:18px 0 0;font-size:17px;line-height:1.5;color:#D5DCEA}
+@media(max-width:700px){.byline-row{gap:12px}.authorbox{padding:22px 20px}}

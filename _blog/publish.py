@@ -10,6 +10,7 @@ TODAY = datetime.datetime.now(ZoneInfo("America/Chicago")).date()
 if "--today" in sys.argv: TODAY = datetime.date.fromisoformat(sys.argv[sys.argv.index("--today") + 1])
 BASE = "https://joshdlange.com"
 E = html.escape
+LI = "https://www.linkedin.com/in/joshdlange/"
 LINKS = {"/assessment": "/assessment.html", "/products": "/products.html", "/revenue": "/revenue.html"}
 
 def inline(t):
@@ -47,6 +48,16 @@ def load(f):
     meta = {k.strip(): v.strip().strip('"') for k, v in (l.split(":", 1) for l in m.group(1).splitlines() if ":" in l)}
     return meta, m.group(2)
 
+def me(box=False):
+    img = '<span class="mono"><img src="../img/josh-lake-sq.jpg" width="400" height="400" alt="Josh Lange" decoding="async" loading="lazy"></span>'
+    bio = f'<a href="../index.html">About Josh</a> &middot; <a href="{LI}" target="_blank" rel="noopener">LinkedIn</a>'
+    line = "I find the one bottleneck in a small business and fix it for good." if box else "Builds AI and custom software for small businesses."
+    return f'<figure class="me{" author-me" if box else " by-me"}" tabindex="-1">{img}<figcaption><b>Josh Lange</b></figcaption><p class="me-line">{line} {bio}</p></figure>'
+
+def authorbox():
+    return ('<aside class="authorbox" aria-label="About the author">' + me(True) +
+            '<p class="ab-cta">Got a repeat job that eats your week? <a href="../assessment.html">Book the free AI call</a>, or text <a href="sms:+15123379530">(512) 337-9530</a>. You leave with one place to start.</p></aside>')
+
 def fmt(d): return d.strftime("%B ") + str(d.day) + d.strftime(", %Y")
 
 shell = (ROOT / "_blog/shell.html").read_text()
@@ -68,11 +79,11 @@ posts.sort(key=lambda p: (-p[0].toordinal(), p[1]))
 keep = {"index.html"}
 for d, _, slug, meta, md in posts:
     keep.add(slug + ".html")
-    ld = '<script type="application/ld+json">\n' + json.dumps({"@context": "https://schema.org", "@type": "BlogPosting", "headline": meta["title"], "description": meta["description"], "datePublished": d.isoformat(), "dateModified": d.isoformat(), "mainEntityOfPage": f"{BASE}/blog/{slug}.html", "author": {"@type": "Person", "name": "Josh Lange", "url": BASE + "/"}, "publisher": {"@type": "Person", "name": "Josh Lange"}}, indent=2) + "\n</script>\n"
+    ld = '<script type="application/ld+json">\n' + json.dumps({"@context": "https://schema.org", "@type": "BlogPosting", "headline": meta["title"], "description": meta["description"], "datePublished": d.isoformat(), "dateModified": d.isoformat(), "mainEntityOfPage": f"{BASE}/blog/{slug}.html", "author": {"@type": "Person", "name": "Josh Lange", "url": BASE + "/", "sameAs": [LI]}, "image": BASE + "/img/josh-lake-sq.jpg", "publisher": {"@type": "Person", "name": "Josh Lange"}}, indent=2) + "\n</script>\n"
     body = (f'<article class="post"><div class="wrap post-in"><a class="back" href="./">&larr; All posts</a>'
             f'<p class="eyebrow a-in">Blog</p><h1 class="a-in">{E(meta["title"], quote=False)}</h1>'
-            f'<p class="byline a-in">By Josh Lange &middot; <time datetime="{d.isoformat()}">{fmt(d)}</time></p>'
-            f'<div class="prose a-in">\n{render(md)}\n</div></div></article>')
+            f'<div class="byline-row a-in">{me()}<p class="byline"><time datetime="{d.isoformat()}">{fmt(d)}</time></p></div>'
+            f'<div class="prose a-in">\n{render(md)}\n</div>{authorbox()}</div></article>')
     page(ROOT / "blog" / (slug + ".html"), meta["title"] + " | Josh Lange", meta["description"], f"{BASE}/blog/{slug}.html", body, ld)
 
 cards = "".join(f'<li><a class="bcard" href="{slug}.html"><time datetime="{d.isoformat()}">{fmt(d)}</time><h2>{E(meta["title"], quote=False)}</h2><p>{E(meta["description"], quote=False)}</p><span class="tl">Read the post &rarr;</span></a></li>' for d, _, slug, meta, _ in posts)

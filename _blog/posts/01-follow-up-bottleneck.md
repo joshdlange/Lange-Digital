@@ -1,6 +1,6 @@
 ---
 title: "The follow-up that only happens when you remember"
-date: 2026-10-14
+date: 2026-10-09
 description: "Cheaper AI is not the point. Find the follow-up bottleneck in your business, automate it, and fix it so it stays fixed."
 keyword: "ai automation services for small businesses"
 ---

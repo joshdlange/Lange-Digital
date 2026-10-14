@@ -1,6 +1,6 @@
 ---
 title: "You do not need a transformation. You need one bottleneck fixed."
-date: 2026-10-14
+date: 2026-10-12
 description: "Big firms sell AI programs. A small business needs one bottleneck found, automated and fixed for the long term. Here is how to start."
 keyword: "how can ai help my small business"
 ---
