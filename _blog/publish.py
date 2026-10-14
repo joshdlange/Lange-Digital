@@ -10,10 +10,11 @@ TODAY = datetime.datetime.now(ZoneInfo("America/Chicago")).date()
 if "--today" in sys.argv: TODAY = datetime.date.fromisoformat(sys.argv[sys.argv.index("--today") + 1])
 BASE = "https://joshdlange.com"
 E = html.escape
+LINKS = {"/assessment": "/assessment.html", "/products": "/products.html", "/revenue": "/revenue.html"}
 
 def inline(t):
     t = E(t, quote=False)
-    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: f'<a href="{m.group(2)}"' + (' target="_blank" rel="noopener"' if m.group(2).startswith("http") else "") + f">{m.group(1)}</a>", t)
+    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: f'<a href="{LINKS.get(m.group(2), m.group(2))}"' + (' target="_blank" rel="noopener"' if m.group(2).startswith("http") else "") + f">{m.group(1)}</a>", t)
     t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
     return t
 
