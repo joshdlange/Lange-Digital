@@ -18,10 +18,10 @@
   window.jlTrack = send;
 
   if (on && cfg.provider === 'ga4') {
-    // Cookieless: storage denied before the config call, so GA4 sets no cookies.
+    // One analytics cookie: analytics_storage granted; ad storage and personalization stay denied.
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
-    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', cfg.id, { allow_google_signals: false, allow_ad_personalization_signals: false });
     var s = document.createElement('script'); s.async = true;
