@@ -18,7 +18,7 @@
   window.jlTrack = send;
 
   if (on && cfg.provider === 'ga4') {
-    // One analytics cookie: analytics_storage granted; ad storage and personalization stay denied.
+    // Analytics cookies: analytics_storage granted; ad storage and personalization stay denied.
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
